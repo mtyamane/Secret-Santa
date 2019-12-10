@@ -4,7 +4,7 @@ A program to pull names or create a list of name-pairs, originally written for s
 ## Instructions
 Find **secretSanta.py** on your computer
 
-Replace names with people in your Secret Santa (all lowercase)
+Replace name placeholders with names of people in your Secret Santa
 
 Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** directory
 ```
