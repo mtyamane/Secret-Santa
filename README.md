@@ -14,6 +14,7 @@ Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** dir
 python secretSanta.py
 ```
 A prompt will appear with the following commands:
+
 | Command | Purpose                                                                   |
 | ------- | ------------------------------------------------------------------------- |
 | l       | create a list of name-pairs                                               |
