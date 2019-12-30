@@ -10,6 +10,8 @@ Replace name placeholders with names of people in your Secret Santa, and add or 
 
 ## Running the Program
 Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** directory
+
+Type:
 ```
 python secretSanta.py
 ```
