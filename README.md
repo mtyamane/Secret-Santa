@@ -6,7 +6,7 @@ A program to pull names or create a list of name-pairs, originally written for s
 ## Installation Instructions
 Find and open **secretSanta.py** on your computer
 
-Replace name placeholders with names of people in your Secret Santa, and add or remove names as needed
+Replace name placeholders (line 79) with names of people in your Secret Santa, and add or remove names as needed
 
 ## Running the Program
 Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** directory
