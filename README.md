@@ -4,7 +4,7 @@ A program to pull names or create a list of name-pairs, originally written for s
 **Note:** Names are not case-sensitive and people will not pull their own name.
 
 ## Installation Instructions
-Find **secretSanta.py** on your computer
+Find and open **secretSanta.py** on your computer
 
 Replace name placeholders with names of people in your Secret Santa, and add or remove names as needed
 
