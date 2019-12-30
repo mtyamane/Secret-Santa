@@ -24,7 +24,7 @@ A prompt will appear with the following commands:
 | q       | quit the program                                                          |
 | r       | restart the program                                                       |
 
-**For creating lists,** the program will automatically create a list of name-pairs using names set in the program.
+**For creating lists,** the program will automatically randomize and display a list of name-pairs using names set in the program.
 
 **For pulling names,** the program will allow two seconds to read your person before clearing the screen and asking for the next name; names are not case-sensitive. Offers the option of checking the list of name-pairs.
 
