@@ -25,3 +25,5 @@ A prompt will appear with the following commands:
 **For creating lists:** The program will automatically create a list of name-pairs using names set in the program.
 
 **For pulling names:** The program will allow two seconds to read your person before clearing the screen and asking for the next name; names are not case-sensitive. Offers the option of checking the list of name-pairs.
+
+**Both options** allow the user to generate a .txt file receipt, which can be printed for a physical copy of the list
