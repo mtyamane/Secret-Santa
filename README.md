@@ -6,7 +6,7 @@ A program to pull names or create a list of name-pairs, originally written for s
 ## Installation Instructions
 Find **secretSanta.py** on your computer
 
-Replace name placeholders with names of people in your Secret Santa
+Replace name placeholders with names of people in your Secret Santa, and add or remove names as needed
 
 ## Running the Program
 Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** directory
@@ -22,8 +22,8 @@ A prompt will appear with the following commands:
 | q       | quit the program                                                          |
 | r       | restart the program                                                       |
 
-**For creating lists:** The program will automatically create a list of name-pairs using names set in the program.
+**For creating lists,** the program will automatically create a list of name-pairs using names set in the program.
 
-**For pulling names:** The program will allow two seconds to read your person before clearing the screen and asking for the next name; names are not case-sensitive. Offers the option of checking the list of name-pairs.
+**For pulling names,** the program will allow two seconds to read your person before clearing the screen and asking for the next name; names are not case-sensitive. Offers the option of checking the list of name-pairs.
 
-**Both options** allow the user to generate a .txt file receipt, which can be printed for a physical copy of the list
+**Both options** allow the user to generate a .txt file receipt located in file location of **secretSanta.py** , which can be printed for a physical copy of the list
