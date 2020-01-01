@@ -32,6 +32,13 @@ def namePull(santa, santaIndex, santas, giftee, giftees, listDict):
 
     return santa, santaIndex, santas, giftee, giftees, listDict;
 
+# Writes a centered row for two names onto a file
+def writeRow(filename, name1, name2, spacing):
+    filename.write("|" + " "*spacing + "|" + " "*spacing + "|\n")
+    filename.write("|" + name1.center(spacing, " ") + "|" + name2.center(spacing," ") + "|\n")
+    filename.write("|" + " "*spacing + "|" + " "*spacing + "|\n")
+    filename.write("+" + "-"*spacing + "+" + "-"*spacing + "+\n")
+
 def generateReceipt(listDict):
     receipt = input("Do you want a receipt of the list? (y/n): ").lower()
     while receipt != "y" and receipt != "n":
@@ -40,10 +47,24 @@ def generateReceipt(listDict):
     if receipt == "y":
         year = input("What year is this for: ")
         with open("secret-santa_"+year+".txt","w+") as f:
+            lineCounter = 0  # counter for nice pdf formatting (page breaks)
+            pageCounter = 0  # counter for nice pdf formatting (page alignment correction)
             # print the list of names
-            f.write("Santa: Giftee\n")
+            spacing = 40
+            f.write("|" + "Santas".center(spacing, " ") + "|" + "Giftees".center(spacing, " ") + "|\n")
+            f.write("+" + "-"*spacing + "+" + "-"*spacing + "+\n")
             for person, gift in listDict.items():
-                f.write(person.capitalize() + ": " + gift.capitalize() + "\n")
+                if lineCounter < 12:
+                    writeRow(f, person.capitalize(), gift.capitalize(), spacing)
+                else:
+                    lineCounter = 0
+                    if pageCounter > 0:
+                        # add a line for page breaks after page 1
+                        f.write(" " + " "*spacing + " " + " "*spacing + " \n")
+                    f.write("+" + "-"*spacing + "+" + "-"*spacing + "+\n")
+                    writeRow(f, person.capitalize(), gift.capitalize(), spacing)
+                    pageCounter += 1
+                lineCounter += 1
             f.close()
 
 # Optional program restart
@@ -136,6 +157,7 @@ def secretSanta():
             for person, gift in listDict.items():
                 print(person.capitalize(), "should get a present for", gift.capitalize())
             sleep(2)
+        generateReceipt(listDict)
         redoPulls()
 
 secretSanta()
