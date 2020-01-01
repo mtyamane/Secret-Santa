@@ -1,7 +1,6 @@
 #-----
 # Author: Mark Yamane
 # This program is used to generate names or create lists of name-pairs for secret santa
-# Offers the option of a .txt receipt, which will be located in file location of secretSanta.py
 # Note: names are not case-sensitive and people will never pull themselves
 #-----
 
@@ -13,7 +12,7 @@ import sys
 def resetLists(people):
     santas = list.copy(people)
     giftees = list.copy(people)
-    listDict = {k:[] for k in people} # initializes each name-pair
+    listDict = {k:[] for k in people}
     return santas, giftees, listDict;
 
 # Loop to simulate pulling names
@@ -33,13 +32,6 @@ def namePull(santa, santaIndex, santas, giftee, giftees, listDict):
 
     return santa, santaIndex, santas, giftee, giftees, listDict;
 
-# Writes a centered row for two names on a file
-def writeRow(filename, name1, name2, spacing):
-    filename.write("|" + " "*spacing + "|" + " "*spacing + "|\n")
-    filename.write("|" + name1.center(spacing, " ") + "|" + name2.center(spacing," ") + "|\n")
-    filename.write("|" + " "*spacing + "|" + " "*spacing + "|\n")
-    filename.write("+" + "-"*spacing + "+" + "-"*spacing + "+\n")
-
 def generateReceipt(listDict):
     receipt = input("Do you want a receipt of the list? (y/n): ").lower()
     while receipt != "y" and receipt != "n":
@@ -47,15 +39,12 @@ def generateReceipt(listDict):
         receipt = input("Do you want a receipt of the list? (y/n): ").lower()
     if receipt == "y":
         year = input("What year is this for: ")
-        f = open("secret-santa_"+year+".txt","w+")
-        
-        # print the list of names
-        spacing = 40
-        f.write("+" + "-"*spacing + "+" + "-"*spacing + "+\n")  # top line of file
-        writeRow(f, "Santa", "Giftee", spacing)
-        for person, gift in listDict.items():
-            writeRow(f, person.capitalize(), gift.capitalize(), spacing)
-        f.close()
+        with open("secret-santa_"+year+".txt","w+") as f:
+            # print the list of names
+            f.write("Santa: Giftee\n")
+            for person, gift in listDict.items():
+                f.write(person.capitalize() + ": " + gift.capitalize() + "\n")
+            f.close()
 
 # Optional program restart
 def redoPulls():
@@ -75,9 +64,11 @@ def screen_clear():
 
 # The name drawing!
 def secretSanta():
-    people = ["name1", "name2", "name3", "name4", "name5"]  # list of names as strings
-    people = [n.lower() for n in people]  # formats list of people
-    santas, giftees, listDict = resetLists(people)
+    with open("names.txt", "r") as f:
+        names = f.readlines()  # replace these for the specific game of Secret Santa
+        people = [n.lower().strip() for n in names]  # formats list of people
+        santas, giftees, listDict = resetLists(people)
+        f.close()
 
     # legend
     print("l = create a list")
@@ -145,7 +136,6 @@ def secretSanta():
             for person, gift in listDict.items():
                 print(person.capitalize(), "should get a present for", gift.capitalize())
             sleep(2)
-        generateReceipt(listDict)
         redoPulls()
 
 secretSanta()
