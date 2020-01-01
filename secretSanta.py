@@ -1,8 +1,8 @@
-#-----
-# Author: Mark Yamane
-# This program is used to generate names or create lists of name-pairs for secret santa
-# Note: names are not case-sensitive and people will never pull themselves
-#-----
+"""
+Author: Mark Yamane
+This program is used to generate names or create lists of name-pairs for secret santa
+Note: names are not case-sensitive and people will never pull themselves
+"""
 
 from random import randint
 from os import system, name
