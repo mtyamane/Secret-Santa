@@ -3,12 +3,12 @@ A program to pull names or create a list of name-pairs, originally written for s
 
 **Note:** Names on each line of **names.txt** are not case-sensitive, but have to be unique.
 
-## Installation Instructions
+### Installation Instructions ###
 Download .zip of **Secret-Santa**
 
 Replace name placeholders in **names.txt** with names of people in your Secret Santa, and add or remove names as needed
 
-## Running the Program
+### Running the Program ###
 Open Command Prompt (Windows) or Terminal (MacOS) and go to **Secret-Santa** directory
 
 Type:
