@@ -4,7 +4,7 @@ A program to pull names or create a list of name-pairs, originally written for s
 **Note:** Names on each line of **names.txt** are not case-sensitive, but have to be unique (for example, distinguish between people of the same first name by including letters of their last name on the same line)
 
 ## Installation Instructions ##
-Download .zip of **Secret-Santa**
+Clone or download .zip of **Secret-Santa**
 
 Replace name placeholders in **names.txt** with names of people in your Secret Santa, and add or remove names as needed
 
