@@ -1,7 +1,7 @@
 # Secret-Santa
 A program to pull names or create a list of name-pairs, originally written for secret santa.
 
-**Note:** Names on each line of **names.txt** are not case-sensitive, but have to be unique.
+**Note:** Names on each line of **names.txt** are not case-sensitive, but have to be unique (for example, distinguish between people of the same first name by including letters of their last name on the same line)
 
 ## Installation Instructions ##
 Download .zip of **Secret-Santa**
